@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="add"></div>
+		<script>
+			//获取标签
+			var add =document.getElementById("add");
+			//添加文本节点
+			var node =document.createTextNode("举头望明月");
+			//添加节点
+			add.appendChild(node);
+			//标签已获取
+			//添加文本节点
+			var node1 =document.createTextNode("明月几时有");
+			//添加标签节点
+			var para = document.createElement("p");
+			//将标签与文本节点相结合
+			para.appendChild(node1);
+			//相当于在网页当中书写了：<P>明月几时有</p>
+			//将标签与文本节点一起存入已有标签中
+			add.appendChild(para)
+			//第二种添加节点：insertbefore:向前进行添加
+			//获取标签（已获取）
+			//添加文本节点
+			var node2 =document.createTextNode("海上升明月");
+			//添加标签节点
+			var para1 =document.createElement("p");
+			//标签文本节点二合一
+			para1.appendChild(node2);
+			//确定参照物
+			var child =document.getElementsByTagName("p")[0];
+			//将文本节点整体添加在所有p标签之前
+			add.insertBefore(para1,child)
+			//获取准备删除的父级元素
+			//获取准备删除的元素
+			var dele =document.getElementsByTagName("p")[1];
+			//确定删除
+			add.removeChild(dele)
+			//替换
+			//替换的文本
+			var para2 =document.createElement("p");
+			var node3 =document.createTextNode("悟空捞月");
+			para2.appendChild(node3);
+			//被替换的文本
+			var replace =document.getElementsByTagName("p")[0];
+			add.replaceChild(para2,replace)
+		</script>
+	</body>
+</html>

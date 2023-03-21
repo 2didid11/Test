@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var obj ={name:"陆家嘴",sex:"男",age:20}//申请一个变量
+			document.write(obj.sex)
+			//关键字使用
+			var date = new Date();//调用时间对象
+			var dat =date.getDate()//获取系统时间日期的方法
+			document.write(date)
+			//第三种创建时间的方式：自定义时间
+			var date2 = new Date(2011,4,30);
+			document.write("<br>2022.5.30-1970有多少秒"+date2)
+			var date0 =""
+			if(date0.constructor ==Date){
+				document.write("日期型对象")
+			}
+			Date.prototype.mark = null;//向对象中添加属性
+			date.mark = date.getDay();
+			document.write(date.mark)
+		</script>
+	</body>
+</html>

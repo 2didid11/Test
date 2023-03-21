@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				color: red;
+			}
+			.c1{
+				background-color: aqua;
+			}
+			#a1{
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		
+			<div class="c1" id="a1">
+			失眠第4天
+			</div>
+		<script>
+			//通过ID选择器选择不同的标签 
+			var i =document.getElementById("a1");
+			i.style.color ="blue"
+			// 通过class选择到不同的标签
+			var i1 =document.getElementsByClassName("c1")
+			i1[0].style.backgroundColor ="red"
+			// 通过标签选择到不同的标签
+			var i2 =document.getElementsByTagName("div")
+			i2[0].style.fontSize = "100px"
+			// 修改页面元素用innerHTML
+			i.innerHTML ="做一个正常人吧!!!";
+			i.innerHTML ="<p>别做白日梦 小心妄想症</p>"
+		</script>
+	</body>
+</html>

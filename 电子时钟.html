@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#watch{
+				font-size:100px;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wath"></div>
+		<script>
+			//向div中添加时间对象，要求每一秒更新一次页面
+			//获取ID为watch的元素
+			var watch =document.getElementById("wath")
+			//定义一个函数，获取时间对象
+			function getDateTime(){
+			//创建时间对象
+			var date =new Date();
+			//获取年月日时分秒
+			var y =date.getFullYear();
+			var m =date.getMonth()+1;
+			var d =date.getDate();
+			var h =date.getHours();
+			var i =date.getMinutes();
+			var s =date.getSeconds();
+			//如果时间是个位数则十位添加零
+			m=m <10 ? "0"+m : m;
+			d=d <10 ? "0"+d : d;
+			h=h <10 ? "0"+h : h;
+			i=i <10 ? "0"+i : i;
+			s=s <10 ? "0"+s : s;
+			var datetimestr=y+"-"+m+"-"+d+" "+h+":"+i+":"+s;
+			//把字符串显示在页面中
+			watch.innerHTML = datetimestr
+			}
+			getDateTime();
+			//添加定时器
+			setInterval(getDateTime,1000)
+		</script>
+	</body>
+</html>

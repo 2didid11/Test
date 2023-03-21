@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var people = new Object();
+			people.weight = "65kg";
+			people.height = "190cm";
+			people.nature = "爽";
+			people.run = function(){document.write("跑步")};
+			people.swim = function(){document.write("游泳")};
+			people.football = function(){document.write("踢球")};
+			//调用
+			document.write(people.weight+people.height+people.nature);
+			people.run();people.swim();people.football();
+			原型方式声明对象
+			function person(){}
+			person.prototype.height = 180;
+			person.prototype.say = function(){alert("原型中的方法")}
+			var yuanxin = new person();
+			yuanxing.height;
+			yuanxing.say()
+		</script>
+	</body>
+</html>

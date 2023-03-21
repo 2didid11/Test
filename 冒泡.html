@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = [1,2,4,55,6,77,26]
+			Array.prototype.bubbleSort= function() {
+				for(var i=0;i<this.length-1;i++){
+					for(var j=0;j<this.length-1-i;j++){
+						if(this[j]>this[j-1]){	
+						var tmep=this[j];
+						this[j]=this[j+1];
+						this[j+1]=tmep;
+						}
+					}
+				}
+			}
+			arr.bubbleSort()
+			document.write(arr)
+		</script>
+	</body>
+</html>

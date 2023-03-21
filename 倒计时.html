@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="showtime"></div>
+		<script>
+			var div = document.getElementById("showtime")
+			function showtime(){
+				//获取时间
+			var nowtime = new Date();
+			//设置终止时间
+			var endtime =new Date("2022/6/18");
+			//计算距离结束时间的毫秒值
+			var lefttime = endtime.getTime()-nowtime.getTime()
+			//计算具体时间
+			var leftd = Math.floor(lefttime/(1000*60*60*24)),
+			    lefth = Math.floor(lefttime/(1000*60*60)%24),
+				leftm = Math.floor(lefttime/(100*60)%60),
+				lefts = Math.floor(lefttime/1000*60);
+				var dateTimestr =leftd+"天"+lefth+":"+leftm+":"+lefts
+				div.innerHTML = dateTimestr;
+				}
+				showtime()
+				setInterval(showtime,1000)
+				
+		</script>
+	</body>
+</html>

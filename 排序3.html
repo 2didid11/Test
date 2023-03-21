@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		//归并排序
+		/*
+		分：把数组分成两部分，在逐步的对数组进行分的操作，直到分成一个个的数
+		合：把两个数合并为有序数组，在对有序数组进行合并，直到全部的数组合并完成
+		*/
+	   /*
+	   4，2，9，8，1，7，0，5
+	   4，2-2，4
+	   9，8-8，9
+	   1，7-1，7
+	   0，5-0，5
+	   2，4，8，9-2，4，8，9
+	   1，7，0，5-0，1，5，7
+	   2，4，8，9，0，1，5，7
+	   0，1，2，4，5，7，8，9
+	   */
+	  Array.prototype.mergeSort = function(){
+		  var rec = function(arr){
+			  if(arr.length ==1){return arr}
+			  var mid = Math.floor(arr.length/2);
+			  var left = arr.slice(0,mid)
+			  var right = arr.slice(mid,arr,length)
+			  //有序数组
+			  var orderLeft= rec(left)
+			  var orderRight = rec(right)
+			  //声明一个变量，存放有序数组
+			  var res = [];
+			  //把左右两个数组合并为一个有序数组
+			  while(orderLeft.length||orderRight.length){
+				  if(orderLeft.length&&orderRight.length){
+					  res.push(orderLeft[0]<orderRight[0]?orderLeft.shift():orderRight.shift())
+				  }else if(orderLeft.length){
+					res.push(orderLeft.shift())
+				  }else if(orderRight.length){
+					  res.push(orderRight.shift())
+				  }
+			  }
+			  return res;
+		  }
+		  var res = rec(this);
+		  res.forEach((n,i)=>{this[i]=n})
+	  }
+	  //直接排序
+		</script>
+	</body>
+</html>

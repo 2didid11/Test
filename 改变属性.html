@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/组 3.png"/>
+		<a id="a2">123</a>
+		<button onclick="document.getElementById('a1').style.color='darkgray'">
+			点击</button>
+		
+		<button onmouseover="document.getElementsByTagName('button')[1].style.
+		position='relative';document.getElementsByTagName('button')[1].style.
+		left='400px'" onmouseout=document.getElementsByTagName('button')[1].style.position='relative';document.getElementsByTagName('button')[1].style.left="">点我呀</button>
+		
+		<button onmouseover="myfunction1()"onmouseout="myfunction2()">再试着点点</button>
+		<script>
+			//想要在js中向HTML添加属性，必须要添加标签自身包含的属性
+			var img =document.getElementsByTagName("img")[0];
+			img.src ="img/组4.png";
+			img.id = "al";
+			img.className ="cl";
+			var ac = document.getElementsByTagName("a")[0]
+			ac.href="http://www.baidu.com"
+			ac.innerText="<p>真相是？？<p/>"
+			ac.innerHTML="<p>真好！！<P/>"
+		</script>
+	</body>
+</html>

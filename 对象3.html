@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="butt()">点击</button>
+		<button ondblclick="butt()">双击</button>
+		<input type="text"onkeydown="key()"onkeyup="key()"/>
+		<input type="text"onkeyup="key1()"onchange="win()"/>
+		<script>
+			//添加event对象一共分为两步
+			//1在HTML中添加对应属性
+			//2在js中添加使用方法
+			//3将两个步骤连接在一起
+			function butt(){
+				alert("这是我的第一个event方法")
+			}
+			function key(){
+				document.write("以按下一次键盘")
+			}
+			function key1(){
+				document.write("松开键盘")
+			}
+		</script>
+	</body>
+</html>

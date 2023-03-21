@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计时器</title>
+		<style>
+			.bigDiv{
+				margin:50px auto;
+				width:200px;
+				height:200px;
+				background-color:red;
+				border-radius:10px;
+			}
+			#showNum{
+				width:200px;
+				height:20px;
+				background-color: aliceblue;
+				border-radius:5px;
+			}
+			.butDiv{
+				pudding: 40px 0px 0px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bigDiv">
+			<h2 aligh="center">计时器</h2>
+			<div id="showNum" align="center">0:0:0</div>
+			<br />
+			<div class="butDiv" align="center">
+				<button id="start">开始</button>
+				<button id="stop">停止</button>
+				<button id="reset">复位</button>		
+		</div>
+		</div>
+		<script>
+			//显示时间
+			var int = null;
+			var num = 0;
+			//开始
+			document.getElementById("start").addEventListener("click",function(){
+				if(int == null){
+					int = setInterval(startNum,1000)
+				}
+			})
+			//停止
+			document.getElementById("stop").addEventListener("click",function(){
+				clearInterval(int)
+				int = null
+			})
+			//复位
+			document.getElementById("reset").addEventListener("click",function(){
+				if(int == null){
+					num =0;
+					document.getElementById("shownum").innerhtml=num
+				}
+			})
+			function startNum(){
+				num++;
+				var s = parseInt(num%60);
+				var m = parseInt(num/60);
+				var h = parseInt(num/60/60);
+				document.getElementById("showNum").innerhtml = h+":"+m+":"+s
+				}
+		</script>
+	</body>
+</html>

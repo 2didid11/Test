@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//字面量声明对象
+			var objname = {
+				brand:"宝马",
+				price:400000,
+				weight:"2.5t",
+				color:"红色",
+				start:function(){
+					alert("启动成功")
+				},
+				operation:function(){
+					alert("运行中。。。")
+				},
+				extinguish:function(){
+					alert("熄火成功")
+				}
+			}
+			//调用属性(objname,属性)和方法(objname,方法())
+			document.write("汽车的品牌:"+objname.brand+"<br>汽车的价格:"+car.price+"<br>汽车的重量:"+car.weight+"<br>汽车的颜色:"+car.color);
+			//car.start();
+			//car.operation();
+			//car.extinguish();
+			//人是一个对象，有体重身高性格三属性，有跑步游泳踢球三个方法
+			//用new操作符构造object对象
+			var people =new object();
+			people.weight ="65kg";
+			people.height ="190cm";
+			people.nature ="闷";
+			people.run = function(){document.write("跑步")};
+			people.swim =function(){document.write("游泳")};
+			people.football = function(){document.write("踢球")}
+			//调用
+			document.write(people.weight+people.height+people.nature);
+			people.run();people.swim();people.football();
+			//原型方式声明对象
+			function person(){}
+			person.prototype.height =180;
+			person.prototype.say= function(){alert("原型中的方法")}
+			var yuanxing = new person();
+			yuanxing.height;
+			yuanxing.say()
+		</script>
+	</body>
+</html>
